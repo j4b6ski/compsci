@@ -1,14 +1,14 @@
-# ściągawka z podstaw Linuxa
+# Ściągawka z podstaw Linuxa
 
-## uruchamianie terminala
+## Uruchamianie terminala
 
 **WSL** - uruchamiamy skrótem "*Ubuntu on Windows*", lub alternatywnie w cmd/PowerShell/Win+R poleceniem `wsl`
 
 **w64devkit** - uruchamiamy w rozpakowanym folderze program `w64devkit.exe`
 
-## podstawy shella
+## Podstawy shella
 
-W oknie terminala powinien uruchomić się tzw. "shell", czyli program który wykonuje wpisywane polecenia (zatwierdzane enterem). 
+W oknie terminala powinien uruchomić się tzw. "shell", czyli program który wykonuje wpisywane polecenia zatwierdzane enterem.
 W naszym przypadku jest to `bash` (WSL), lub `sh` (w64devkit). 
 Polecenia mogą być operacjami w specjalnym wbudowanym języku skryptowym, albo nazwami programów. 
 
@@ -21,7 +21,7 @@ Shell wykonuje polecenia w aktualnym *katalogu roboczym* (*working directory*).
 
 Historię wykonywanych poleceń można przeglądać strzałkami w górę/dół.
 
-### argumenty pozycyjne 
+### Argumenty pozycyjne
 
 Uruchamianym programom można podawać *argumenty pozycyjne*, na przykład:
 
@@ -44,16 +44,17 @@ Niektóre programy (ale nie program `ls`) rozróżniają ścieżki kończące si
 | `ls ../../`   | wypisuje dwa katalogi wyżej |
 --->
 
-### flagi
+### Flagi
 
 Niektóre programy rozróżniają argumenty poprzedzone pojedynczym (`-`) lub podwójnym (`--`) myślnikiem (*dash*) jako *flagi* (lub *opcje*). 
 Po niektórych flagach czasem podaje się *wartość*, oddzieloną spacją lub znakiem `=`.
 
-Najczęstszą flagą jest `--help`, zwykle nie przyjmuje wartości:
+Najczęściej występującą flagą jest `--help`, zwykle nie przyjmuje wartości:
 
 | polecenie | opis |
 | --------- | ---- |
-| `ls --help` | wypisuje instrukcje do programu `ls` |
+| `ls --help` | wypisuje krótką ściągawkę do programu `ls` |
+| `man ls` | program `man` (**man**ual, z ang. "podręcznik") wyświetla bardziej dogłębne instrukcje |
 
 W większości programów kolejność flag nie ma znaczenia, ale często wszystkie flagi muszą znajdować się przed argumentami pozycyjnymi.
 
@@ -71,21 +72,21 @@ Czasami flagi krótkie mają też odpowiadające *flagi długie*.
 | `ls --all -l ~` |
 | `ls -l --all ~` |
 
-### autouzupełnianie
+### Autouzupełnianie
 Podczas pisania przydatne jest autouzupełnianie klawiszem \<tab\>
 
 `ls -al /h` + \<tab\> = `ls -al /home/`
 
 jeśli nie ma jednoznacznego zakończenia, pokazuje się lista wszystkich możliwości
 
-### dostęp do plików z Windowsa
+### Dostęp do plików z Windowsa
 
 | polecenie | opis |
 | --------- | ---- |
 | `ls -al /mnt/c` | lokacja dysku C na WSL |
 | `ls -al C:/`    | lokacja dysku C na w64devkit<br>(w tym przypadku `C:/` jest też katalogiem głównym `/`) |
 
-### zmiana aktualnego katalogu
+### Zmiana aktualnego katalogu
 
 Program `cd` (**c**hange **d**irectory) zmienia aktualny katalog (wypisywany poleceniem `pwd`)
 
@@ -97,7 +98,7 @@ Program `cd` (**c**hange **d**irectory) zmienia aktualny katalog (wypisywany pol
 | `cd /` | wejście do katalogu głównego
 | `cd /home/user/test` | wejście do katalogu /home/user/test, tzw. *ścieżka bezwzględna* (ang. *absolute path*) |
 
-## interakcja z systemem plików
+## Interakcja z systemem plików
 
 | polecenie | opis |
 | --------- | ---- |
@@ -113,7 +114,7 @@ Program `cd` (**c**hange **d**irectory) zmienia aktualny katalog (wypisywany pol
 | `rm -r katalog` | program `rm` z flagą -r (--**r**ecursive) usuwa katalog wraz z całą zawartością (**bezpowrotnie**), pytając dla każdego pliku o potwierdzenie |
 | `rm -rf katalog` | (**ostrożnie!**) program `rm` z flagą -f (--**f**orce) **nie pyta o potwierdzenie** (przydatne przy usuwaniu katalogów z wieloma plikami)
 
-## programy z windowsa
+## Programy z windowsa
 
 Zarówno w WSL jak w64devkit można uruchamiać programy z windowsa
 
@@ -123,7 +124,7 @@ Zarówno w WSL jak w64devkit można uruchamiać programy z windowsa
 
 `nano hello.txt`
 
-## kompilacja i uruchamianie programów C++
+## Kompilacja i uruchamianie programów C++
 
 Programy C++ kompilujemy programem `g++` (GNU  C++ compiler).
 Domyślna nazwa skompilowanego programu to `a.out`.
@@ -141,7 +142,7 @@ g++ hello.cpp
 
 Programy `.exe` skompilowane naszym ulubionym IDE (np. Code::Blocks) uruchamiamy w dokładnie ten sam sposób.
 
-### najbardziej przydatne flagi do g++:
+### Najbardziej przydatne flagi do g++:
 
 Wszystkie flagi `g++` są poprzedzone pojedynczym myślnikiem (`-`)
 
@@ -153,7 +154,7 @@ Wszystkie flagi `g++` są poprzedzone pojedynczym myślnikiem (`-`)
 | `g++ -g` | dołącza do programu symbole do debugowania |
 | `g++ -O3` | włącza poziom 3 optymalizacji czasowej (używany na OI) |
 
-### przekierowywanie wejścia i wyjścia
+### Przekierowywanie wejścia i wyjścia
 
 przekierowanie pliku na *wejście standardowe* (*standard input*) z użyciem operatora `<`
 ```
@@ -172,7 +173,8 @@ echo "test" | ./hello > out
 cat out
 ```
 
-# dalsza nauka
+# Dalsza nauka
 
 Dla zainteresowanych nauką Linuxa gorąco polecam trzecie wydanie książki [*How Linux Works*](https://nostarch.com/howlinuxworks3) autorstwa Briana Warda.
+
 Rozdział 2 szczegółowo opisuje podstawy terminala i wiele innych przydatnych na co dzień poleceń.

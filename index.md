@@ -1,3 +1,3 @@
-# WWI2023
-## grupa 2 i ½
-- [ściągawka z Linuxa](linux-sciagawka.md)
+# WWI 2023
+## grupa 2 i 2½
+### [ściągawka z podstaw Linuxa](linux.md)
