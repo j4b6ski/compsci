@@ -68,7 +68,7 @@ void add(int zap_pocz, int zap_kon, int wartosc, int akt=1, int akt_pocz=0, int 
 // znajdz maksimum na przedziale [zap_pocz, zap_kon]
 // implementacja tak samo jak w punkt-przedzial jedyna zmiana to 
 // zawsze wolamy push na poczatku, zeby miec aktualne wartosci w drzewie "tree"
-int get_maks(int zap_pocz, int zap_kon, int akt=1, int akt_pocz=0, int akt_kon=n_max-1)
+int get_max(int zap_pocz, int zap_kon, int akt=1, int akt_pocz=0, int akt_kon=n_max-1)
 {
     push(akt); // zawsze push, bo jesli zostawimy lazy[akt] != 0, to chodzimy po nieaktualnych wartosciach
 
@@ -83,8 +83,8 @@ int get_maks(int zap_pocz, int zap_kon, int akt=1, int akt_pocz=0, int akt_kon=n
     else
     {
         int akt_sro = (akt_pocz + akt_kon) / 2;
-        int lewy_wynik = get_maks(zap_pocz, zap_kon, 2*akt, akt_pocz, akt_sro);
-        int prawy_wynik = get_maks(zap_pocz, zap_kon, 2*akt + 1, akt_sro + 1, akt_kon);
+        int lewy_wynik = get_max(zap_pocz, zap_kon, 2*akt, akt_pocz, akt_sro);
+        int prawy_wynik = get_max(zap_pocz, zap_kon, 2*akt + 1, akt_sro + 1, akt_kon);
         return max(lewy_wynik, prawy_wynik);
     }
 }
