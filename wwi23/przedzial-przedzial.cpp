@@ -1,3 +1,4 @@
+#include <climits>
 #include <iostream>
 
 using namespace std;
@@ -73,7 +74,7 @@ int get_maks(int zap_pocz, int zap_kon, int akt=1, int akt_pocz=0, int akt_kon=n
 
     if (zap_kon < akt_pocz || akt_kon < zap_pocz)
     {
-        return 0;
+        return INT_MIN;
     }
     else if (zap_pocz <= akt_pocz && akt_kon <= zap_kon)
     {
